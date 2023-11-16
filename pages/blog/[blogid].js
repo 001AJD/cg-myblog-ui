@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import CommentSection from "../../components/blog/comment";
 
 function BlogPage() {
 	const [blog, setBlog] = useState({});
@@ -45,6 +46,7 @@ function BlogPage() {
 				<h3>{blog.title}</h3>
 				<h4>{blog.author}</h4>
 				<p>{blog.body}</p>
+				<CommentSection />
 			</div>
 		);
 	}
