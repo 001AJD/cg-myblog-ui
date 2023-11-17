@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import CommentSection from "../../components/blog/comment";
+import AddCommentSection from "../../components/blog/add-comment-section";
+import CommentsList from "../../components/blog/comments-list";
 
 function BlogPage() {
 	const [blog, setBlog] = useState({});
@@ -46,7 +47,15 @@ function BlogPage() {
 				<h3>{blog.title}</h3>
 				<h4>{blog.author}</h4>
 				<p>{blog.body}</p>
-				<CommentSection />
+				{blog.comments ? (
+					<CommentsList comments={blog.comments} />
+				) : (
+					<div>
+						<h4>Comments</h4>
+						<p>No one have commented on your post yet!</p>
+					</div>
+				)}
+				<AddCommentSection />
 			</div>
 		);
 	}

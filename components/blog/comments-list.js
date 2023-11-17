@@ -1,16 +1,7 @@
 import { Fragment } from "react";
 
-function CommentsList() {
-	const dummyData = [
-		{
-			userName: "ajinkya",
-			comment: "Awesome Blog post",
-		},
-		{
-			userName: "Max",
-			comment: "Good read! Food for brain",
-		},
-	];
+function CommentsList(props) {
+	const dummyData = props.comments;
 
 	return (
 		<Fragment>
