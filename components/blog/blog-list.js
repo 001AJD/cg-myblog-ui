@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import BlogItem from "./blog-item";
+import classes from "./blog-list.module.css";
 
 function BlogList(props) {
 	const [isLoading, setIsLoading] = useState(true);
@@ -35,14 +36,13 @@ function BlogList(props) {
 	if (isLoading) {
 		return (
 			<div>
-				<h2>Loading...</h2>
+				<h2 className="center">Loading...</h2>
 			</div>
 		);
 	} else {
 		return (
-			<ul>
+			<ul className={classes.list}>
 				{loadedBlogs.map((blog) => {
-					console.log(blog.id);
 					return <BlogItem key={blog.id} data={blog} />;
 				})}
 			</ul>
