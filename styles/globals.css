@@ -1,33 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	margin: 0;
-	font-family: "Open Sans", "Lato", sans-serif;
-	color: #414141;
-	background-color: #e4f1f1;
+:root {
+  --gradient-color-1: #fdfbfb; /* Start color */
+  --gradient-color-2: #ebedee; /* End color */
+  --progress-bar-bg-color: #bcbaba; /* progress bar bg color */
+  --progress-bar-fg-color: #008080; /* progress bar foreground color */
+  line-height: 1.2rem;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
-	font-family: "Lato", sans-serif;
-	color: #2b2b2b;
+h5 {
+  font-family: "Roboto Mono", monospace, "Medium 500";
+}
+
+@media (max-width: 576px) {
+  :root {
+    background: #fdfdfd;
+    line-height: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .center {
-	margin: auto;
-	text-align: center;
+  margin: auto;
+  text-align: center;
 }

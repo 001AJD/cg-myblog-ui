@@ -1,5 +1,7 @@
-.list {
-	width: 90%;
-	max-width: 40rem;
-	margin: 5rem auto;
+.gridLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
