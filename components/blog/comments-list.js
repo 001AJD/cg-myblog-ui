@@ -1,4 +1,5 @@
 import classes from "./comments-list.module.css";
+import CommentItem from "./comment-item";
 
 function CommentsList(props) {
   const dummyData = props.comments;
@@ -7,7 +8,7 @@ function CommentsList(props) {
     <ul className={classes.list}>
       {dummyData.map((comment) => (
         <li key={comment.userName}>
-          {comment.userName} say's ~ {comment.comment}
+          <CommentItem />
         </li>
       ))}
     </ul>

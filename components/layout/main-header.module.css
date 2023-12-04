@@ -32,6 +32,12 @@
   text-decoration: none;
 }
 
+.rightNav {
+  margin-left: auto;
+  margin-right: 1rem;
+  float: right;
+}
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
   .mainNav {

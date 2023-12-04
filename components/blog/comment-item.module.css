@@ -1,0 +1,19 @@
+.card {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 0.3fr 3fr;
+  text-align: left;
+}
+
+.cardImage img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.content h4 {
+  color: var(--font-color2);
+  font-family: "Roboto Mono", "Medium 500";
+}

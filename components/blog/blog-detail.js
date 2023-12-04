@@ -1,6 +1,7 @@
 import Image from "next/image";
 import classes from "./blog-detail.module.css";
 import CommentsList from "./comments-list";
+import AddCommentSection from "./add-comment-section";
 
 function BlogDetailPage(props) {
   const { title, author, body, comments } = props;
@@ -38,6 +39,7 @@ function BlogDetailPage(props) {
       <div>
         <h1 className={classes.title}>Comments Section</h1>
         <CommentsList comments={comments} />
+        <AddCommentSection />
       </div>
     </div>
   );

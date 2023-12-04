@@ -1,12 +1,12 @@
-import { Fragment } from "react";
-import CommentsList from "./comments-list";
+import classes from "./add-comment-section.module.css";
+import Button from "../ui/button";
 
-function AddCommentSection(props) {
+function AddCommentSection() {
   return (
-    <Fragment>
-      <textarea rows={3}></textarea>
-      <button>Add Comment</button>
-    </Fragment>
+    <div className={classes.card}>
+      <textarea rows={1}></textarea>
+      <Button>Add Comment</Button>
+    </div>
   );
 }
 
