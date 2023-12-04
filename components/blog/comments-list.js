@@ -1,20 +1,17 @@
-import { Fragment } from "react";
+import classes from "./comments-list.module.css";
 
 function CommentsList(props) {
-	const dummyData = props.comments;
+  const dummyData = props.comments;
 
-	return (
-		<Fragment>
-			<h3>See what people are saying below</h3>
-			<ul>
-				{dummyData.map((comment) => (
-					<li key={comment.userName}>
-						{comment.userName} say's ~ {comment.comment}
-					</li>
-				))}
-			</ul>
-		</Fragment>
-	);
+  return (
+    <ul className={classes.list}>
+      {dummyData.map((comment) => (
+        <li key={comment.userName}>
+          {comment.userName} say's ~ {comment.comment}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 export default CommentsList;

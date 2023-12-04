@@ -1,32 +1,19 @@
 :root {
   --gradient-color-1: #fdfbfb; /* Start color */
   --gradient-color-2: #ebedee; /* End color */
-  --progress-bar-bg-color: #bcbaba; /* progress bar bg color */
-  --progress-bar-fg-color: #008080; /* progress bar foreground color */
+  --font-color1: #2c2c2c;
+}
+
+html,
+body {
+  font-family: "Roboto Mono", "Medium 500";
+  padding-bottom: 1.5rem;
   line-height: 1.2rem;
   background: linear-gradient(
     to right,
     var(--gradient-color-1),
     var(--gradient-color-2)
   );
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Roboto Mono", monospace, "Medium 500";
-}
-
-@media (max-width: 576px) {
-  :root {
-    background: #fdfdfd;
-    line-height: 1rem;
-    padding-top: 1rem;
-  }
 }
 
 ul {
