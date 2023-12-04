@@ -9,7 +9,7 @@ function BlogDetailPage(props) {
   return (
     <div className={classes.container}>
       <div className={classes.content}>
-        <h1 className={classes.title}>Blog Title</h1>
+        <h1 className={classes.title}>{title}</h1>
         <Image
           src="/images/coding-event.jpg"
           alt={title}

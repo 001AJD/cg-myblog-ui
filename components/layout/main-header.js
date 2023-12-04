@@ -35,6 +35,7 @@ function MainHeader() {
                 <span>All Blogs</span>
               </Link>
             </li>
+            <li></li>
           </ul>
           <span className={classes.rightNav}>
             {user ? (
