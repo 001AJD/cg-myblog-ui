@@ -1,4 +1,25 @@
-.container {
+.topNav {
+  overflow: hidden;
+}
+
+.topNav span {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-decoration: none;
+  color: rgb(65, 65, 65);
+  font-size: 1.3em;
+  font-family: "Roboto Mono", monospace, "Large 500";
+}
+
+.topNavRight {
+  float: right;
+}
+
+/* .container {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 1rem;
@@ -35,7 +56,7 @@
 .rightNav {
   margin-left: auto;
   margin-right: 1rem;
-}
+} */
 
 /* Responsive styles */
 @media only screen and (max-width: 768px) {

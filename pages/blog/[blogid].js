@@ -38,8 +38,8 @@ function BlogPage() {
 
   if (isLoading) {
     return (
-      <div class="center">
-        <p>Loading...</p>
+      <div className="center">
+        <h2>Loading...</h2>
       </div>
     );
   } else {

@@ -18,36 +18,60 @@ function MainHeader() {
   }
 
   return (
-    <header className={classes.header}>
-      <div className={classes.container}>
-        <nav className={classes.mainNav}>
-          <ul>
-            <li>
-              <Link href="/">
-                <span>
-                  <FontAwesomeIcon icon={faCube} />
-                </span>
-                <span> MyBlog</span>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <span>All Blogs</span>
-              </Link>
-            </li>
-            <li></li>
-          </ul>
-          <span className={classes.rightNav}>
+    <header>
+      <div className={classes.topNav}>
+        <Link href="/">
+          <span>
+            <FontAwesomeIcon icon={faCube} /> MyBlog
+          </span>
+        </Link>
+        <Link href="/blog">
+          <span>All Blog</span>
+        </Link>
+        <div className={classes.topNavRight}>
+          <span>
             {user ? (
               <Button onClick={logoutHandler}>Logout</Button>
             ) : (
               <Button onClick={loginHandler}>Login</Button>
             )}
           </span>
-        </nav>
+        </div>
       </div>
     </header>
   );
+
+  // return (
+  //   <header className={classes.header}>
+  //     <div className={classes.container}>
+  //       <nav className={classes.mainNav}>
+  //         <ul>
+  //           <li>
+  //             <Link href="/">
+  //               <span>
+  //                 <FontAwesomeIcon icon={faCube} />
+  //               </span>
+  //               <span> MyBlog</span>
+  //             </Link>
+  //           </li>
+  //           <li>
+  //             <Link href="/blog">
+  //               <span>All Blogs</span>
+  //             </Link>
+  //           </li>
+  //           <li></li>
+  //         </ul>
+  //         <span className={classes.rightNav}>
+  //           {user ? (
+  //             <Button onClick={logoutHandler}>Logout</Button>
+  //           ) : (
+  //             <Button onClick={loginHandler}>Login</Button>
+  //           )}
+  //         </span>
+  //       </nav>
+  //     </div>
+  //   </header>
+  // );
 }
 
 export default MainHeader;
