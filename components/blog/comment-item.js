@@ -1,10 +1,9 @@
 import Image from "next/image";
 import classes from "./comment-item.module.css";
 
-function CommentItem() {
-  const user = "Ajinkya D";
-  const comment =
-    "Eiusmod labore laboris culpa duis in ipsum culpa mollit incididunt.";
+function CommentItem(props) {
+  const { userName, comment } = props;
+
   const image = "/images/avatar1.jpg";
   const date = "Dec 4";
 
@@ -15,7 +14,7 @@ function CommentItem() {
       </div>
       <div className={classes.content}>
         <h4>
-          {user},&ensp;<time>{date}</time>
+          {userName},&ensp;<time>{date}</time>
         </h4>
         <p>{comment}</p>
       </div>

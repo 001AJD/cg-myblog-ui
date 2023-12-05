@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy --project cg-myblog-ui",
+    "firebase-emulate": "firebase emulators:start --only hosting"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

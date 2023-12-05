@@ -38,7 +38,7 @@ function BlogPage() {
 
   if (isLoading) {
     return (
-      <div>
+      <div class="center">
         <p>Loading...</p>
       </div>
     );
@@ -49,6 +49,7 @@ function BlogPage() {
         author={blog.author}
         body={blog.body}
         comments={blog.comments}
+        blogId={blogId}
       />
     );
   }

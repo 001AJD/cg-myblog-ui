@@ -2,9 +2,10 @@ import Image from "next/image";
 import classes from "./blog-detail.module.css";
 import CommentsList from "./comments-list";
 import AddCommentSection from "./add-comment-section";
+import NoCommentsSection from "./no-comments-section";
 
 function BlogDetailPage(props) {
-  const { title, author, body, comments } = props;
+  const { title, author, body, comments, blogId } = props;
 
   return (
     <div className={classes.container}>
@@ -38,8 +39,12 @@ function BlogDetailPage(props) {
       </div>
       <div>
         <h1 className={classes.title}>Comments Section</h1>
-        <CommentsList comments={comments} />
-        <AddCommentSection />
+        {comments.length === 0 ? (
+          <NoCommentsSection />
+        ) : (
+          <CommentsList comments={comments} />
+        )}
+        <AddCommentSection blogId={blogId} />
       </div>
     </div>
   );

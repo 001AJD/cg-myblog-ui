@@ -6,9 +6,9 @@ function CommentsList(props) {
 
   return (
     <ul className={classes.list}>
-      {dummyData.map((comment) => (
-        <li key={comment.userName}>
-          <CommentItem />
+      {dummyData.map((comment, index) => (
+        <li key={index}>
+          <CommentItem userName={comment.userName} comment={comment.comment} />
         </li>
       ))}
     </ul>
