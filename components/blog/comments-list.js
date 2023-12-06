@@ -8,6 +8,7 @@ function CommentsList(props) {
   const [comments, setComments] = useState([]);
   const { blogId } = props;
   const apiURL = process.env.NEXT_PUBLIC_MYBLOGAPI + `/getcomments/${blogId}`;
+  const apiKey = process.env.NEXT_PUBLIC_MYBLOG_API_KEY;
 
   useEffect(() => {
     getComments();
@@ -18,7 +19,7 @@ function CommentsList(props) {
     fetch(apiURL, {
       method: "GET",
       headers: {
-        "api-key": process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
+        "api-key": apiKey,
       },
     })
       .then((response) => {

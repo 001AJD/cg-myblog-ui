@@ -35,14 +35,18 @@ function AddCommentSection(props) {
         "Content-Type": "application/json",
         "api-key": process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
       },
-    }).then((response) => {
-      if (response.ok) {
-        props.onCommentAdded();
-        commentInputRef.current.value = "";
-      } else {
-        throw new Error("Failed to add new comment");
-      }
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          props.onCommentAdded();
+          commentInputRef.current.value = "";
+        } else {
+          throw new Error("Failed to add new comment");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   if (user) {
