@@ -37,7 +37,7 @@ function BlogDetailPage(props) {
           deserunt. Consequat ad laborum dolore dolor.
         </p>
       </div>
-      <div>
+      <div className={classes.scrollable}>
         <h1 className={classes.title}>Comments Section</h1>
         {comments.length === 0 ? (
           <NoCommentsSection />
