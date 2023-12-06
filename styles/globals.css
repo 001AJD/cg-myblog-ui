@@ -1,0 +1,50 @@
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:root {
+  --gradient-color-1: #fdfbfb; /* Start color */
+  --gradient-color-2: #ebedee; /* End color */
+  --font-color1: #2c2c2c;
+  --font-color2: #3a3b3c;
+}
+
+html,
+body,
+p {
+  font-family: "Roboto Mono", "Medium 500";
+  padding-bottom: 1.5rem;
+  line-height: 1.2rem;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-1),
+    var(--gradient-color-2)
+  );
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}

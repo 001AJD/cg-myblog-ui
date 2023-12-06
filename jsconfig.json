@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./*"],
+      "@firebase/": ["./lib/firebase/"],
+      "@components/": ["./components/"]
+    }
+  }
+}
