@@ -1,8 +1,6 @@
 import Image from "next/image";
 import classes from "./blog-detail.module.css";
 import CommentsList from "./comments-list";
-import AddCommentSection from "./add-comment-section";
-import NoCommentsSection from "./no-comments-section";
 
 function BlogDetailPage(props) {
   const { title, author, body, comments, blogId } = props;
@@ -37,15 +35,7 @@ function BlogDetailPage(props) {
           deserunt. Consequat ad laborum dolore dolor.
         </p>
       </div>
-      <div className={classes.scrollable}>
-        <h1 className={classes.title}>Comments Section</h1>
-        {comments.length === 0 ? (
-          <NoCommentsSection />
-        ) : (
-          <CommentsList comments={comments} />
-        )}
-        <AddCommentSection blogId={blogId} />
-      </div>
+      <CommentsList blogId={blogId} />
     </div>
   );
 }

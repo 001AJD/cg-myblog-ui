@@ -4,8 +4,10 @@ import { getUser } from "@/lib/getUser";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 import { useRef } from "react";
 import { apiKey } from "../../apiConfig.js";
+import { useRouter } from "next/router";
 
 function AddCommentSection(props) {
+  const router = useRouter();
   const commentInputRef = useRef();
   const user = getUser();
   const { blogId } = props;
@@ -35,12 +37,16 @@ function AddCommentSection(props) {
         "api-key": apiKey,
       },
     }).then((response) => {
-      console.log(response);
+      if (response.ok) {
+        props.onCommentAdded();
+        commentInputRef.current.value = "";
+      } else {
+        throw new Error("Failed to add new comment");
+      }
     });
   }
 
   if (user) {
-    console.log(user);
     return (
       <div>
         <form onSubmit={submitHandler} className={classes.inlineForm}>
