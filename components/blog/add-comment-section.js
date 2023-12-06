@@ -1,9 +1,9 @@
 import classes from "./add-comment-section.module.css";
-import Button from "../ui/button";
+import Button from "./components/ui/button";
 import { getUser } from "@/lib/getUser";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 import { useRef } from "react";
-import { apiKey } from "../../apiConfig.js";
+import { apiKey } from "./apiConfig.js";
 import { useRouter } from "next/router";
 
 function AddCommentSection(props) {

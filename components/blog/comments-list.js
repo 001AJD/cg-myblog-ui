@@ -1,6 +1,6 @@
 import classes from "./comments-list.module.css";
 import CommentItem from "./comment-item";
-import { myBlogAPI } from "../../apiConfig";
+import { myBlogAPI } from "./apiConfig.js";
 import { Fragment, useEffect, useState } from "react";
 import NoCommentsSection from "./no-comments-section";
 import AddCommentSection from "./add-comment-section";
