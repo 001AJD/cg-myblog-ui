@@ -1,6 +1,5 @@
 import classes from "./comments-list.module.css";
 import CommentItem from "./comment-item";
-import { myBlogAPI } from "./apiConfig.js";
 import { Fragment, useEffect, useState } from "react";
 import NoCommentsSection from "./no-comments-section";
 import AddCommentSection from "./add-comment-section";
@@ -8,16 +7,18 @@ import AddCommentSection from "./add-comment-section";
 function CommentsList(props) {
   const [comments, setComments] = useState([]);
   const { blogId } = props;
+  const apiURL = process.env.NEXT_PUBLIC_MYBLOGAPI + `/getcomments/${blogId}`;
 
   useEffect(() => {
     getComments();
   }, []);
 
   function getComments() {
-    fetch(`${myBlogAPI}/getcomments/${blogId}`, {
+    console.log(apiURL);
+    fetch(apiURL, {
       method: "GET",
       headers: {
-        "api-key": "A098",
+        "api-key": process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
       },
     })
       .then((response) => {

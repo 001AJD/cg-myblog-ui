@@ -1,9 +1,8 @@
 import classes from "./add-comment-section.module.css";
-import Button from "./components/ui/button";
+import Button from "@/components/ui/button";
 import { getUser } from "@/lib/getUser";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 import { useRef } from "react";
-import { apiKey } from "./apiConfig.js";
 import { useRouter } from "next/router";
 
 function AddCommentSection(props) {
@@ -34,7 +33,7 @@ function AddCommentSection(props) {
       body: JSON.stringify(payload),
       headers: {
         "Content-Type": "application/json",
-        "api-key": apiKey,
+        "api-key": process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
       },
     }).then((response) => {
       if (response.ok) {
