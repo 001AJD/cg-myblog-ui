@@ -1,46 +1,66 @@
 import classes from "./featured-blogs-section.module.css";
 import Card from "../ui/card";
+import { useEffect, useState } from "react";
 
 function FeaturedBlogsSection() {
-  const DUMMY_FEATURED_BLOG = [
-    {
-      id: "6541026ba2711aeae11ccab8",
-      title: "My Blog Title",
-      image: "introvert-event",
-      summary:
-        "Incididunt esse cupidatat non laboris id. Est ullamco laborum veniam labore occaecat. Ut quis ipsum magna adipisicing in non quis magna culpa sunt qui duis official",
-    },
-    {
-      id: "6541026ba2711aeae11ccab8",
-      title: "My Blog Title2",
-      image: "coding-event",
-      summary:
-        "Incididunt esse cupidatat non laboris id. Est ullamco laborum veniam labore occaecat. Ut quis ipsum magna adipisicing in non quis magna culpa sunt qui duis official",
-    },
-    {
-      id: "6541026ba2711aeae11ccab8",
-      title: "My Blog Title3",
-      image: "extrovert-event",
-      summary:
-        "Incididunt esse cupidatat non laboris id. Est ullamco laborum veniam labore occaecat. Ut quis ipsum magna adipisicing in non quis magna culpa sunt qui duis official",
-    },
-  ];
+  const apiURL = process.env.NEXT_PUBLIC_MYBLOGAPI + "/getfeaturedblogs";
+  const apiKey = process.env.NEXT_PUBLIC_MYBLOG_API_KEY;
+  const images = ["extrovert-event", "background1", "coding-event"];
+  const summary =
+    "Deserunt aliquip aute adipisicing culpa nulla velit id incididunt anim incididunt reprehenderit excepteur.";
 
-  return (
-    <div className={classes.featuredBlogs}>
-      {DUMMY_FEATURED_BLOG.map((item) => {
-        return (
-          <Card
-            key={item.title}
-            id={item.id}
-            title={item.title}
-            image={item.image}
-            summary={item.summary}
-          />
-        );
-      })}
-    </div>
-  );
+  const [featuredBlogs, setFeaturedBlogs] = useState([]);
+
+  useEffect(() => {
+    getfeaturedBlogs();
+    console.log(featuredBlogs);
+  }, []);
+
+  function getfeaturedBlogs() {
+    console.log(apiURL);
+    fetch(apiURL, {
+      method: "GET",
+      headers: {
+        "api-key": apiKey,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch comments");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setFeaturedBlogs(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  if (featuredBlogs.length === 0) {
+    return (
+      <div>
+        <h2 className="center">Loading...</h2>
+      </div>
+    );
+  } else {
+    return (
+      <div className={classes.featuredBlogs}>
+        {featuredBlogs.map((item, index) => {
+          return (
+            <Card
+              key={item.title}
+              id={item.blogId}
+              title={item.title}
+              image={images[index]}
+              summary={summary}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }
 
 export default FeaturedBlogsSection;
