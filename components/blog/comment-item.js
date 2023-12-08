@@ -2,10 +2,14 @@ import Image from 'next/image';
 import classes from './comment-item.module.css';
 
 function CommentItem(props) {
-  const { userName, comment } = props;
+  const { userName, comment, date } = props;
+  const readableDate = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
 
   const image = '/images/avatar1.jpg';
-  const date = 'Dec 4';
 
   return (
     <div className={classes.card}>
@@ -14,7 +18,7 @@ function CommentItem(props) {
       </div>
       <div className={classes.content}>
         <h4>
-          {userName},&ensp;<time>{date}</time>
+          {userName} &ensp;<time>{readableDate}</time>
         </h4>
         <p>{comment}</p>
       </div>
