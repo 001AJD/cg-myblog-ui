@@ -1,8 +1,8 @@
-import classes from "./comments-list.module.css";
-import CommentItem from "./comment-item";
-import { Fragment, useEffect, useState } from "react";
-import NoCommentsSection from "./no-comments-section";
-import AddCommentSection from "./add-comment-section";
+import classes from './comments-list.module.css';
+import CommentItem from './comment-item';
+import { Fragment, useEffect, useState } from 'react';
+import NoCommentsSection from './no-comments-section';
+import AddCommentSection from './add-comment-section';
 
 function CommentsList(props) {
   const [comments, setComments] = useState([]);
@@ -15,16 +15,15 @@ function CommentsList(props) {
   }, []);
 
   function getComments() {
-    console.log(apiURL);
     fetch(apiURL, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "api-key": apiKey,
+        'api-key': apiKey,
       },
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to fetch comments");
+          throw new Error('Failed to fetch comments');
         }
         return response.json();
       })
@@ -39,7 +38,7 @@ function CommentsList(props) {
   if (comments.length === 0) {
     return (
       <Fragment>
-        <NoCommentsSection />;
+        <NoCommentsSection />
         <AddCommentSection blogId={blogId} onCommentAdded={getComments} />
       </Fragment>
     );

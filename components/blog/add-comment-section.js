@@ -1,9 +1,9 @@
-import classes from "./add-comment-section.module.css";
-import Button from "@/components/ui/button";
-import { getUser } from "@/lib/getUser";
-import { signInWithGoogle } from "@/lib/firebase/auth";
-import { useRef } from "react";
-import { useRouter } from "next/router";
+import classes from './add-comment-section.module.css';
+import Button from '@/components/ui/button';
+import { getUser } from '@/lib/getUser';
+import { signInWithGoogle } from '@/lib/firebase/auth';
+import { useRef } from 'react';
+import { useRouter } from 'next/router';
 
 function AddCommentSection(props) {
   const router = useRouter();
@@ -22,26 +22,26 @@ function AddCommentSection(props) {
     const displayName = user.displayName;
 
     const URL =
-      "https://us-central1-cg-myblog-api.cloudfunctions.net/api/blogs/addcomment/";
+      'https://us-central1-cg-myblog-api.cloudfunctions.net/api/blogs/addcomment/';
     const payload = {
       userName: displayName,
       comment: enteredComment,
     };
 
     fetch(`${URL}${blogId}`, {
-      method: "PUT",
+      method: 'PUT',
       body: JSON.stringify(payload),
       headers: {
-        "Content-Type": "application/json",
-        "api-key": process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
+        'Content-Type': 'application/json',
+        'api-key': process.env.NEXT_PUBLIC_MYBLOG_API_KEY,
       },
     })
       .then((response) => {
         if (response.ok) {
           props.onCommentAdded();
-          commentInputRef.current.value = "";
+          commentInputRef.current.value = '';
         } else {
-          throw new Error("Failed to add new comment");
+          throw new Error('Failed to add new comment');
         }
       })
       .catch((err) => {

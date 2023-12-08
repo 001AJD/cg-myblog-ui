@@ -1,6 +1,6 @@
-import Image from "next/image";
-import classes from "./blog-detail.module.css";
-import CommentsList from "./comments-list";
+import Image from 'next/image';
+import classes from './blog-detail.module.css';
+import CommentsList from './comments-list';
 
 function BlogDetailPage(props) {
   const { title, author, body, comments, blogId } = props;

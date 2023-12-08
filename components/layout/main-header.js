@@ -1,10 +1,10 @@
-import Link from "next/link";
-import classes from "./main-header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCube } from "@fortawesome/free-solid-svg-icons";
-import Button from "../ui/button";
-import { signInWithGoogle, signOut } from "../../lib/firebase/auth";
-import { getUser } from "@/lib/getUser";
+import Link from 'next/link';
+import classes from './main-header.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCube } from '@fortawesome/free-solid-svg-icons';
+import Button from '../ui/button';
+import { signInWithGoogle, signOut } from '../../lib/firebase/auth';
+import { getUser } from '@/lib/getUser';
 
 function MainHeader() {
   const user = getUser();

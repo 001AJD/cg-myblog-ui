@@ -1,14 +1,14 @@
-import { useRouter } from "next/router";
-import classes from "./blog-item.module.css";
-import Image from "next/image";
-import Button from "../ui/button";
+import { useRouter } from 'next/router';
+import classes from './blog-item.module.css';
+import Image from 'next/image';
+import Button from '../ui/button';
 
 function BlogItem(props) {
   const router = useRouter();
   const { id, title, author, body } = props.data;
   let body2 = body;
   body2 =
-    "Mollit Lorem ad do velit occaecat qui tempor proident est mollit culpa minim quis et.";
+    'Mollit Lorem ad do velit occaecat qui tempor proident est mollit culpa minim quis et.';
 
   function exploreHandler() {
     const fullPath = `/blog/${id}`;

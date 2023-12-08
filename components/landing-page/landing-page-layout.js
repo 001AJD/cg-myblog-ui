@@ -1,6 +1,6 @@
-import HeroSection from "./hero-section";
-import FeaturedBlogsSection from "./featured-blogs-section";
-import { Fragment } from "react";
+import HeroSection from './hero-section';
+import FeaturedBlogsSection from './featured-blogs-section';
+import { Fragment } from 'react';
 
 function LandingPageLayout() {
   return (

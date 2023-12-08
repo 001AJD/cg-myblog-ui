@@ -1,4 +1,4 @@
-import classes from "./no-comments-section.module.css";
+import classes from './no-comments-section.module.css';
 
 function NoCommentsSection() {
   return (

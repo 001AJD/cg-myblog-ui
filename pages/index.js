@@ -1,4 +1,4 @@
-import LandingPageLayout from "@/components/landing-page/landing-page-layout";
+import LandingPageLayout from '@/components/landing-page/landing-page-layout';
 
 function HomePage() {
   return <LandingPageLayout />;

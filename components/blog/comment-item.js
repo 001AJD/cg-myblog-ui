@@ -1,11 +1,11 @@
-import Image from "next/image";
-import classes from "./comment-item.module.css";
+import Image from 'next/image';
+import classes from './comment-item.module.css';
 
 function CommentItem(props) {
   const { userName, comment } = props;
 
-  const image = "/images/avatar1.jpg";
-  const date = "Dec 4";
+  const image = '/images/avatar1.jpg';
+  const date = 'Dec 4';
 
   return (
     <div className={classes.card}>

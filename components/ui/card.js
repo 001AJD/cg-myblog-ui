@@ -1,6 +1,6 @@
-import classes from "./card.module.css";
-import Button from "./button";
-import Image from "next/image";
+import classes from './card.module.css';
+import Button from './button';
+import Image from 'next/image';
 
 function Card(props) {
   const { title, summary, image, id } = props;
