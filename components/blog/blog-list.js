@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import BlogItem from './blog-item';
 import classes from './blog-list.module.css';
 import Card from '../ui/card';
 
@@ -45,11 +44,6 @@ function BlogList(props) {
     );
   } else {
     return (
-      // <ul className={classes.gridLayout}>
-      //   {loadedBlogs.map((blog) => {
-      //     return <BlogItem key={blog.id} data={blog} />;
-      //   })}
-      // </ul>
       <div className={classes.gridLayout}>
         {loadedBlogs.map((blog) => {
           return (
