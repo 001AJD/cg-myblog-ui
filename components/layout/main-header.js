@@ -43,29 +43,6 @@ function MainHeader() {
         </ul>
       </nav>
     </header>
-    // <header>
-    //   <nav>
-    //     <div className={classes.topNav}>
-    //       <Link href="/">
-    //         <span>
-    //           <FontAwesomeIcon icon={faCube} /> MyBlog
-    //         </span>
-    //       </Link>
-    //       <Link href="/blog">
-    //         <span>All Blog</span>
-    //       </Link>
-    //       <div className={classes.topNavRight}>
-    //         <span>
-    //           {user ? (
-    //             <Button onClick={logoutHandler}>Logout</Button>
-    //           ) : (
-    //             <Button onClick={loginHandler}>Login</Button>
-    //           )}
-    //         </span>
-    //       </div>
-    //     </div>
-    //   </nav>
-    // </header>
   );
 }
 
