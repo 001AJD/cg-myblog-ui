@@ -5,6 +5,7 @@ import { faCube } from '@fortawesome/free-solid-svg-icons';
 import Button from '../ui/button';
 import { signInWithGoogle, signOut } from '../../lib/firebase/auth';
 import { getUser } from '@/lib/getUser';
+import { Fragment } from 'react';
 
 function MainHeader() {
   const user = getUser();
@@ -18,60 +19,54 @@ function MainHeader() {
   }
 
   return (
-    <header>
-      <div className={classes.topNav}>
-        <Link href="/">
-          <span>
-            <FontAwesomeIcon icon={faCube} /> MyBlog
-          </span>
+    <header className={classes.flexLayout}>
+      <h1 className={classes.title}>
+        <Link href={'/'}>
+          <FontAwesomeIcon icon={faCube} />
+          &nbsp;MyBlog
         </Link>
-        <Link href="/blog">
-          <span>All Blog</span>
-        </Link>
-        <div className={classes.topNavRight}>
-          <span>
-            {user ? (
-              <Button onClick={logoutHandler}>Logout</Button>
-            ) : (
-              <Button onClick={loginHandler}>Login</Button>
-            )}
-          </span>
-        </div>
-      </div>
+      </h1>
+      <nav className={classes.navBar}>
+        <ul>
+          <li>
+            <Link href="/blog"> Blogs</Link>
+          </li>
+          <li>
+            <span>
+              {user ? (
+                <Button onClick={logoutHandler}>Logout</Button>
+              ) : (
+                <Button onClick={loginHandler}>Login</Button>
+              )}
+            </span>
+          </li>
+        </ul>
+      </nav>
     </header>
+    // <header>
+    //   <nav>
+    //     <div className={classes.topNav}>
+    //       <Link href="/">
+    //         <span>
+    //           <FontAwesomeIcon icon={faCube} /> MyBlog
+    //         </span>
+    //       </Link>
+    //       <Link href="/blog">
+    //         <span>All Blog</span>
+    //       </Link>
+    //       <div className={classes.topNavRight}>
+    //         <span>
+    //           {user ? (
+    //             <Button onClick={logoutHandler}>Logout</Button>
+    //           ) : (
+    //             <Button onClick={loginHandler}>Login</Button>
+    //           )}
+    //         </span>
+    //       </div>
+    //     </div>
+    //   </nav>
+    // </header>
   );
-
-  // return (
-  //   <header className={classes.header}>
-  //     <div className={classes.container}>
-  //       <nav className={classes.mainNav}>
-  //         <ul>
-  //           <li>
-  //             <Link href="/">
-  //               <span>
-  //                 <FontAwesomeIcon icon={faCube} />
-  //               </span>
-  //               <span> MyBlog</span>
-  //             </Link>
-  //           </li>
-  //           <li>
-  //             <Link href="/blog">
-  //               <span>All Blogs</span>
-  //             </Link>
-  //           </li>
-  //           <li></li>
-  //         </ul>
-  //         <span className={classes.rightNav}>
-  //           {user ? (
-  //             <Button onClick={logoutHandler}>Logout</Button>
-  //           ) : (
-  //             <Button onClick={loginHandler}>Login</Button>
-  //           )}
-  //         </span>
-  //       </nav>
-  //     </div>
-  //   </header>
-  // );
 }
 
 export default MainHeader;

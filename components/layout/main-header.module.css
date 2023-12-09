@@ -1,77 +1,45 @@
-.topNav {
-  overflow: hidden;
+.flexLayout {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
-.topNav span {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  text-decoration: none;
-  color: rgb(65, 65, 65);
-  font-size: 1.3em;
+.flexLayout li {
+  list-style: none;
+  display: inline-block;
+  padding: 1rem;
+  font-size: 2em;
+}
+
+.title {
+  margin-right: auto;
+  font-size: 2.5rem;
   font-family: 'Roboto Mono', monospace, 'Large 500';
 }
 
-.topNavRight {
-  float: right;
-}
-
-/* .container {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1rem;
-}
-
-.mainNav {
-  align-items: center;
-  margin-left: 5rem;
-}
-
-.mainNav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.mainNav li {
-  padding: 1em;
-  margin-right: 15px;
-}
-
-.mainNav span {
+.title a {
   text-decoration: none;
-  color: rgb(65, 65, 65);
-  font-size: 1.3em;
-  font-family: "Roboto Mono", monospace, "Large 500";
+  color: var(--font-color1);
 }
 
-.mainNav a {
+.title a:hover {
+  box-shadow: 5px 5px 10px 5px var(--font-color3);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.navBar a {
   text-decoration: none;
+  font-family: 'Roboto Mono';
+  color: #555;
+  transition: all 0.3s ease 0s;
 }
 
-.rightNav {
-  margin-left: auto;
-  margin-right: 1rem;
-} */
-
-/* Responsive styles */
-@media only screen and (max-width: 768px) {
-  .mainNav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .mainNav ul {
-    margin-top: 10px;
-    flex-direction: column;
-  }
-
-  .mainNav li {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
+.navBar a:hover {
+  border: 2px solid var(--font-color4);
+  border-radius: 6px;
+  padding: 0.25rem 0.7rem;
 }
