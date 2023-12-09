@@ -17,8 +17,8 @@ function Card(props) {
       </div>
       <div>
         <p>{summary}</p>
+        <Button link={`blog/${id}`}>Explore</Button>
       </div>
-      <Button link={`blog/${id}`}>Explore</Button>
     </div>
   );
 }

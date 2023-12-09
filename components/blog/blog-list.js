@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import BlogItem from './blog-item';
 import classes from './blog-list.module.css';
+import Card from '../ui/card';
 
 function BlogList(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedBlogs, setLoadedBlogs] = useState([]);
+  const summary =
+    'Consequat et irure incididunt exercitation.Ad mollit qui aliqua voluptate in reprehenderit aliqua laboris dolore laboris.';
+  const image = 'extrovert-event';
 
   // useEffect Executes the callback function after the dependencies are updated/modified.
   // In this case there are no dependency hence will execute the function once.
@@ -41,11 +45,23 @@ function BlogList(props) {
     );
   } else {
     return (
-      <ul className={classes.gridLayout}>
+      // <ul className={classes.gridLayout}>
+      //   {loadedBlogs.map((blog) => {
+      //     return <BlogItem key={blog.id} data={blog} />;
+      //   })}
+      // </ul>
+      <div className={classes.gridLayout}>
         {loadedBlogs.map((blog) => {
-          return <BlogItem key={blog.id} data={blog} />;
+          return (
+            <Card
+              title={blog.title}
+              summary={summary}
+              image={image}
+              id={blog.id}
+            />
+          );
         })}
-      </ul>
+      </div>
     );
   }
 }

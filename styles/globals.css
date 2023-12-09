@@ -29,7 +29,6 @@ html,
 body,
 p {
   font-family: 'Roboto Mono', 'Medium 500';
-  padding-bottom: 1.5rem;
   line-height: 1.2rem;
   background-color: var(--gradient-color-2);
 }
