@@ -52,7 +52,7 @@ function CommentsList(props) {
               <CommentItem
                 userName={comment.userName}
                 comment={comment.comment}
-                date={comment.date ? comment.date : ""}
+                date={comment.date ? comment.date : ''}
               />
             </li>
           ))}

@@ -6,8 +6,8 @@ function BlogDetailPage(props) {
   const { title, author, body, comments, blogId } = props;
 
   return (
-    <div className={classes.container}>
-      <div className={classes.content}>
+    <div className={classes.gridLayout}>
+      <div className={classes.header}>
         <h1 className={classes.title}>{title}</h1>
         <Image
           src="/images/coding-event.jpg"
@@ -15,7 +15,8 @@ function BlogDetailPage(props) {
           width={1000}
           height={300}
         />
-
+      </div>
+      <div className={classes.content}>
         <p>
           &emsp;&emsp;&emsp;&emsp;{body}
           <br />
@@ -35,7 +36,9 @@ function BlogDetailPage(props) {
           deserunt. Consequat ad laborum dolore dolor.
         </p>
       </div>
-      <CommentsList blogId={blogId} />
+      <div>
+        <CommentsList blogId={blogId} />
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 0.3fr 3fr;
+  column-gap: 2rem;
   text-align: left;
 }
 
@@ -14,6 +15,11 @@
 }
 
 .content h4 {
-  color: var(--font-color2);
+  color: var(--font-color3);
   font-family: 'Roboto Mono', 'Medium 500';
+}
+
+.content p {
+  font-family: 'Roboto Mono';
+  color: var(--font-color2);
 }

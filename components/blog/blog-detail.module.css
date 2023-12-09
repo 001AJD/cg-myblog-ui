@@ -1,11 +1,11 @@
-.container {
-  margin-left: 10rem;
-  margin-right: 10rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  padding-top: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
+.gridLayout {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 1rem;
 }
 
 .title {
@@ -14,17 +14,13 @@
   text-align: center;
 }
 
-.content img {
+.header img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  object-fit: cover;
   object-position: top;
   border-radius: 10px;
   box-shadow: 0.25em 0.15em 1.2em gray;
-  margin-bottom: 2.5rem;
-  margin-top: 2.5rem;
-  max-width: 100%;
   height: auto;
   width: 100%;
 }
