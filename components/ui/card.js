@@ -15,7 +15,6 @@ function Card(props) {
           height={300}
         />
       </div>
-
       <div>
         <p>{summary}</p>
       </div>
